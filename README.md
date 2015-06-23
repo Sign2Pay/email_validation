@@ -1,5 +1,7 @@
 # Email Validation
 
+[ ![Codeship Status for Sign2Pay/email_validation](https://codeship.com/projects/cff99ba0-fbcf-0132-4de4-1658e61aa1b1/status?branch=master)](https://codeship.com/projects/87271)
+
 This straightforward Ruby class will connect to [Mailgun's Email Validation Service](https://documentation.mailgun.com/api-email-validation.html#email-validation) and tell you if the provided email is valid or not.
 
 ## Configuration
