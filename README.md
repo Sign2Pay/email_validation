@@ -1,6 +1,6 @@
 # Email Validation
 
-This straightforward Ruby class will connect to [Mailgun's Email Validation Service] and tell you if the provided email is valid or not.
+This straightforward Ruby class will connect to [Mailgun's Email Validation Service](https://documentation.mailgun.com/api-email-validation.html#email-validation) and tell you if the provided email is valid or not.
 
 ## Configuration
 

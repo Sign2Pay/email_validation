@@ -1,6 +1,6 @@
 module EmailValidation
+  # This class validates the email that is given to the initializer.
   class Validate
-    VERSION = "1.0.0"
 
     def initialize(email)
       @email = email
