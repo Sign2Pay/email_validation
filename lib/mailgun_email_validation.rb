@@ -1,5 +1,7 @@
-require "mailgun_email_validation/version"
+class MailgunEmailValidation
+  VERSION = "1.0.0"
 
-module MailgunEmailValidation
-  # Your code goes here...
+  def initialize(email)
+    @email = email
+  end
 end
