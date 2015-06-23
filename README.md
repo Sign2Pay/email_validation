@@ -56,16 +56,13 @@ You can then ask the user to change their email.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'email_validation'
+gem 'email_validation', github: 'sign2pay/email_validation'
 ```
+Currently this gem hasn't been released to Rubygems. We would need a new name I think. If anyone is interested in me doing that, open an issue.
 
-And then execute:
+To install this gem:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install email_validation
 
 ## Development
 
