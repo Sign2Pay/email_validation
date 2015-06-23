@@ -1,26 +1,36 @@
-# Mailgun Email Validation
+# Email Validation
 
 This straightforward Ruby class will connect to [Mailgun's Email Validation Service] and tell you if the provided email is valid or not.
+
+## Configuration
+
+Configure your Mailgun public key:
+
+```
+EmailValidation.configure do |config|
+  config.mailgun_public_key = 'pubkey-5ogiflzbnjrljiky49qxsiozqef5jxp7'
+end
+```
 
 ## Use instructions
 
 ```
-MailgunEmailValidation.new("eg@gmail.com").valid? # => false
+EmailValidation::Validate.new("eg@gmail.com").valid? # => false
 ```
 
 or do it in two steps if that's more your style:
 
 ```
-validation = MailgunEmailValidation.new("eg@gmail.com")
+validation = EmailValidation::Validate.new("eg@gmail.com")
 validation.valid? # => false
 ```
 
 ## Background Job
 
-Normally I sugges you create a background job to check email validity. You don't really want to be depent on Mailgun being online in order to be able to register a new user. A possible solution using a boolean field on User is this:
+I suggest you create a background job to check email validity. You don't really want to depend on Mailgun being online in order to register a new user. A possible solution using a boolean field on User is this:
 
 ```
-require 'mailgun_email_validation'
+require 'email_validation/validate'
 
 class EmailValidationJob < ApplicationJob
   queue_as :default
@@ -32,7 +42,7 @@ class EmailValidationJob < ApplicationJob
   private
 
   def email_valid(email)
-    MailgunEmailValidation.new(email).valid?
+    EmailValidation::Validate.new(email).valid?
   end
 end
 ```
@@ -44,7 +54,7 @@ You can then ask the user to change their email.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'mailgun_email_validation'
+gem 'email_validation'
 ```
 
 And then execute:
@@ -53,11 +63,9 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install mailgun_email_validation
+    $ gem install email_validation
 
 ## Development
-
-Using minitest:
 
 ```
 rake test
@@ -65,7 +73,7 @@ rake test
 
 ## Contributing
 
-[Open an issue](https://github.com/Sign2Pay/mailgun_email_validation/issues) or submit a pull request. We'll work it out!
+[Open an issue](https://github.com/Sign2Pay/email_validation/issues) or submit a pull request. We'll work it out!
 
 ## Copyright
 

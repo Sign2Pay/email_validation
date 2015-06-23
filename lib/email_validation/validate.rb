@@ -14,7 +14,7 @@ module EmailValidation
 
     def connection
       Faraday.new url: "https://api.mailgun.net" do |faraday|
-        faraday.use Faraday::Request::BasicAuthentication, 'api', 'pubkey-5ogiflzbnjrljiky49qxsiozqef5jxp7'
+        faraday.use Faraday::Request::BasicAuthentication, 'api', EmailValidation.configuration.mailgun_public_key
         faraday.request :json
         faraday.response :json
         faraday.adapter Faraday.default_adapter
