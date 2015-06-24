@@ -8,12 +8,12 @@ class TestEmailValidation < Minitest::Test
 
   def test_valid_email
     stub_request(:get, /api\.mailgun\.net/).to_return(valid_response)
-    assert EmailValidation::Validate.new("valid@gmail.com").valid?
+    assert_equal true, EmailValidation::Validate.new("valid@gmail.com").valid?
   end
 
   def test_invalid_email
     stub_request(:get, /api\.mailgun\.net/).to_return(invalid_response)
-    assert EmailValidation::Validate.new("eg@gmail.com").valid?, false
+    assert_equal false, EmailValidation::Validate.new("eg@gmail.com").valid?
   end
 
   def valid_response

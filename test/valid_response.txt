@@ -2,7 +2,6 @@ HTTP/1.1 200 OK
 Server: nginx/1.7.9
 Date: Tue, 23 Jun 2015 09:58:47 GMT
 Content-Type: application/json
-Content-Length: 166
 Connection: keep-alive
 Access-Control-Allow-Origin: *
 Access-Control-Max-Age: 600
@@ -12,10 +11,10 @@ Access-Control-Allow-Headers: Content-Type, x-requested-with
 {
   "address": "valid@gmail.com",
   "did_you_mean": null,
-  "is_valid": false,
+  "is_valid": true,
   "parts": {
     "display_name": null,
-    "domain": null,
-    "local_part": null
+    "domain": "gmail.com",
+    "local_part": "valid"
   }
 }

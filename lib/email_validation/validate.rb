@@ -7,7 +7,8 @@ module EmailValidation
     end
 
     def valid?
-      connection.get "/v3/address/validate?address=#{@email}"
+      response = connection.get "/v3/address/validate?address=#{@email}"
+      response.body['is_valid']
     end
 
     private
